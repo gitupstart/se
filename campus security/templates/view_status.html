@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Security Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>View Security Status</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Leaves Taken</th>
+        </tr>
+        {% for status in security_status %}
+        <tr>
+            <td>{{ status.id }}</td>
+            <td>{{ status.name }}</td>
+            <td>{{ status.leaves_taken }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

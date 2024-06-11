@@ -1,0 +1,35 @@
+CREATE DATABASE security_management;
+
+USE security_management;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    identity_number VARCHAR(100) UNIQUE,
+    password VARCHAR(100),
+    role ENUM('manager', 'security')
+);
+
+CREATE TABLE places (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    place_name VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE routines (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    security_id INT,
+    place_id INT,
+    duty_date DATE,
+    start_time TIME,
+    end_time TIME,
+    FOREIGN KEY (security_id) REFERENCES users(id),
+    FOREIGN KEY (place_id) REFERENCES places(id)
+);
+
+CREATE TABLE leave_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    security_id INT,
+    request_date DATE,
+    status ENUM('pending', 'approved', 'declined'),
+    FOREIGN KEY (security_id) REFERENCES users(id)
+);

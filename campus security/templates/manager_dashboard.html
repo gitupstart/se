@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Manager Dashboard</h1>
+    <ul>
+        <li><a href="{{ url_for('create_routine') }}">Create Routine</a></li>
+        <li><a href="{{ url_for('approve_leave') }}">Approve Leave</a></li>
+        <li><a href="{{ url_for('view_status') }}">View Security Status</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+</body>
+</html>

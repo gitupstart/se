@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Routine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Create Routine</h1>
+    <form action="{{ url_for('create_routine') }}" method="post">
+        <label for="security_id">Security Person:</label>
+        <select id="security_id" name="security_id" required>
+            {% for person in security_persons %}
+                <option value="{{ person.id }}">{{ person.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="place_id">Place:</label>
+        <select id="place_id" name="place_id" required>
+            {% for place in places %}
+                <option value="{{ place.id }}">{{ place.place_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="duty_date">Duty Date:</label>
+        <input type="date" id="duty_date" name="duty_date" required>
+        <br>
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" required>
+        <br>
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required>
+        <br>
+        <button type="submit">Create Routine</button>
+    </form>
+</body>
+</html>

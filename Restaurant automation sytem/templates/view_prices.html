@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Prices and Stock</title>
+</head>
+<body>
+    <h1>Prices and Stock of Items</h1>
+    <table style="border: 2px solid black;">
+        <thead>
+            <tr aria-colspan="1">
+                <th colspan="1">Item_Name</th>
+                <th></th>
+                <th colspan="1">Item_Price</th>
+                <th></th>
+                <th colspan="1"> Stock</th>
+            </tr>
+        </thead>
+        <tbody >
+            {% for item in items %}
+            <tr style="padding: 5px;">
+                <td>{{ item[0] }}</td>
+                <td></td>
+            
+                <td>{{ item[1] }}</td>
+                <td></td>
+                <td>{{ item[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

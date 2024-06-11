@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approve Leave</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Approve Leave</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Security Person</th>
+            <th>Request Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for request in leave_requests %}
+        <tr>
+            <td>{{ request.id }}</td>
+            <td>{{ request.name }}</td>
+            <td>{{ request.request_date }}</td>
+            <td>{{ request.status }}</td>
+            <td>
+                <form action="{{ url_for('approve_leave') }}" method="post">
+                    <input type="hidden" name="leave_id" value="{{ request.id }}">
+                    <button type="submit" name="status" value="approved">Approve</button>
+                    <button type="submit" name="status" value="declined">Decline</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

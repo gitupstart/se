@@ -1,0 +1,15 @@
+pip install Flask-SQLAlchemy
+pip install Flask-Bootstrap Flask-MySQL
+pip install Flask-WTF
+pip install email-validator
+pip install mysqlclient
+
+create database two;
+use two;
+
+ CREATE TABLE users (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL,
+         email VARCHAR(100) NOT NULL,
+         password VARCHAR(100) NOT NULL
+    );

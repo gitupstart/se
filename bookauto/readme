@@ -1,0 +1,2 @@
+ create database bookshop_db;
+ use bookshop_db;

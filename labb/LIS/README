@@ -1,0 +1,15 @@
+CREATE TABLE books (
+    isbn VARCHAR(20) PRIMARY KEY,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    category VARCHAR(100),
+    rack_number VARCHAR(10),
+    copies INT
+);
+
+INSERT INTO books (isbn, title, author, category, rack_number, copies) VALUES
+('978-3-16-148410-0', 'Introduction to Algorithms', 'Thomas H. Cormen', 'Computing', 'A1', 5),
+('978-0-262-03384-8', 'Artificial Intelligence: A Modern Approach', 'Stuart Russell', 'Computing', 'A2', 3),
+('978-0-13-110362-7', 'The C Programming Language', 'Brian W. Kernighan', 'Computing', 'A3', 2),
+('978-1-4493-8982-8', 'Learning PHP, MySQL & JavaScript', 'Robin Nixon', 'Web Development', 'B1', 4);
+

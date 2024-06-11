@@ -1,0 +1,9 @@
+CREATE TABLE repair_requests (
+    request_id INT AUTO_INCREMENT PRIMARY KEY,
+    resident_name VARCHAR(100) NOT NULL,
+    contact_number VARCHAR(20) NOT NULL,
+    suburb VARCHAR(100) NOT NULL,
+    road_name VARCHAR(200) NOT NULL,
+    issue_description TEXT NOT NULL,
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

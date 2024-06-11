@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise Road Repair Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Raise Road Repair Request</h1>
+        <form method="post" action="process_request.php">
+            <div class="form-group">
+                <label for="resident_name">Your Name:</label>
+                <input type="text" id="resident_name" name="resident_name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" required>
+            </div>
+            <div class="form-group">
+                <label for="suburb">Suburb:</label>
+                <input type="text" id="suburb" name="suburb" required>
+            </div>
+            <div class="form-group">
+                <label for="road_name">Road Name:</label>
+                <input type="text" id="road_name" name="road_name" required>
+            </div>
+            <div class="form-group">
+                <label for="issue_description">Issue Description:</label>
+                <textarea id="issue_description" name="issue_description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Submit Request</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

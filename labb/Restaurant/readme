@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS managers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO managers (username, password) VALUES ('admin', 'password');
+
+CREATE TABLE IF NOT EXISTS menu_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL
+);
+
+INSERT INTO menu_items (item_name, price, stock) VALUES 
+('Pizza', 12.99, 10),
+('Burger', 8.99, 20),
+('Pasta', 10.50, 15),
+('Salad', 7.99, 25),
+('Soda', 1.99, 50);

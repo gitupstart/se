@@ -1,0 +1,17 @@
+pip install flask-mysqldb
+
+CREATE DATABASE feedback_db;
+//CREATE USER 'root'@'localhost' IDENTIFIED BY '';
+//GRANT ALL PRIVILEGES ON feedback_db.* TO 'root'@'localhost';
+//FLUSH PRIVILEGES;
+use feedback_db;
+CREATE TABLE feedback (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    feedback TEXT NOT NULL,
+    address varchar(225) NOT NULL
+    
+);
+

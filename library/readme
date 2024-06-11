@@ -1,0 +1,14 @@
+create database four;
+
+
+ use four;
+
+CREATE TABLE books (
+id INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+author VARCHAR(255) NOT NULL,
+rack_number VARCHAR(20) NOT NULL,
+copies_available INT NOT NULL
+);
+
+insert into books values(12,"abc","xyz",90,5);

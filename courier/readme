@@ -1,0 +1,10 @@
+CREATE DATABASE courier_db;
+
+USE courier_db;
+
+CREATE TABLE couriers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_name VARCHAR(50) NOT NULL,
+    receiver_name VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL
+);

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Bookings</title>
+</head>
+<body>
+    <h2>Your Bookings</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                {{ booking.source }} to {{ booking.destination }} - 
+                Departure: {{ booking.departure_time }} - 
+                Arrival: {{ booking.arrival_time }} - 
+                Price: {{ booking.price }}
+                <form method="post" action="{{ url_for('cancel', booking_id=booking.id) }}">
+                    <input type="submit" value="Cancel">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

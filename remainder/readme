@@ -1,0 +1,16 @@
+pip install Flask-Mail
+pip install flask flask-mysqldb flask-mail
+
+
+CREATE DATABASE meeting_db;
+
+USE meeting_db;
+
+CREATE TABLE meetings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    date_time DATETIME NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+

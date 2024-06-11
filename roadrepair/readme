@@ -1,0 +1,2 @@
+create database rrts_db;
+use rrts_db;

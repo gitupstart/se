@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meetings</title>
+</head>
+<body>
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+        <li>{{ meeting.title }} - {{ meeting.date_time }} - {{ meeting.email }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

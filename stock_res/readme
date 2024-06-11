@@ -1,0 +1,9 @@
+CREATE DATABASE restaurant_db;
+
+USE restaurant_db;
+
+CREATE TABLE stock (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL
+);

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+</head>
+<body>
+    <h1>Book Search</h1>
+    <form action="/search" method="GET">
+        <label for="b_id">Enter book id:</label>
+        <input type="text" id="b_id" name="b_id"><br>
+        <label for="title">Enter book title:</label>
+        <input type="text" id="title" name="title"><br>
+
+        <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const response = await fetch(`/search?title=${title}`);
+            const data = await response.json();
+            displayResults(data);
+        });
+
+        function displayResults(books) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (books.length === 0) {
+                resultsDiv.innerHTML = 'Book not found';
+                return;
+            }
+
+            books.forEach(book => {
+                const bookInfo = `<p>Title: ${book.title}, Author: ${book.author}, Rack Number: ${book.rack_number}, Copies Available: ${book.copies_available}</p>`;
+                resultsDiv.innerHTML += bookInfo;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courier Status</title>
+</head>
+<body>
+    <h2>Courier Status</h2>
+    <p>Sender: {{ courier.sender_name }}</p>
+    <p>Receiver: {{ courier.receiver_name }}</p>
+    <p>Status: {{ courier.status }}</p>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
